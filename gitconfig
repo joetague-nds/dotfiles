@@ -1,0 +1,62 @@
+[user]
+	# Name used in commit messages.
+	name = Joe Tague
+	# Email used in commit messages.
+	email = joetague-nds@users.noreply.github.com
+
+[github]
+	# GitHub username for command-line tools.
+	user = joetague-nds
+
+[gist]
+	# Open GitHub Gist in browser after submission.
+	browse = true
+
+[credential]
+	# Use macOS Keychain to store HTTP passwords.
+	helper = osxkeychain
+
+[push]
+	# Push to the set upstream branch being tracked by default.
+	default = simple
+
+[pull]
+	# Default to rebasing on pulls
+	rebase = true
+
+[fetch]
+	# Always prune when fetching (and pulling).
+	prune = true
+
+[rebase]
+	# Run `git stash` if needed before a `git rebase`
+	autoStash = true
+	# Auto-add `--autosquash` to `git rebase`
+	autoSquash = true
+
+[apply]
+	# Cleanup whitespace by default when apply patches.
+	whitespace = fix
+
+[core]
+	# Exclude everything this file. Used for general exclusions.
+	excludesfile = ~/.gitignore
+	# Set attributes on files. Used for general diff improvements.
+	attributesfile = ~/.gitattributes
+	editor = emacsclient --no-wait --create-frame
+
+[mergetool]
+	# Don't prompt before opening the merge tool.
+	prompt = false
+	# Don't keep backups of the merge tool inputs.
+	keepBackup = false
+	# Don't keep the merge tool temporary input/output files.
+	keepTemporaries = false
+
+[diff-so-fancy]
+	stripLeadingSymbols = false
+	markEmptyLines = false
+[init]
+	defaultBranch = main
+[hub]
+	protocol = ssh
