@@ -37,3 +37,8 @@ aws(){
 		   -e AWS_PROFILE \
 		   amazon/aws-cli "$@"
 }
+bb() {
+	docker run -it --rm \
+		   --log-driver none \
+                   babashka/babashka "$@"
+}
