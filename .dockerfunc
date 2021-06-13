@@ -30,13 +30,14 @@ del_stopped(){
 #
 # Container Aliases
 #
-aws(){
-	docker run -it --rm \
-		   -v "${HOME}/.aws:/root/.aws" \
-		   --log-driver none \
-		   -e AWS_PROFILE \
-		   amazon/aws-cli "$@"
-}
+# aws(){
+# 	docker run -it --rm \
+# 		   -v "${HOME}/.aws:/root/.aws" \
+# 		   -v "${HOME}/.kube:/root/.kube" \
+# 		   --log-driver none \
+# 		   -e AWS_PROFILE \
+# 		   amazon/aws-cli "$@"
+# }
 bb() {
 	docker run -it --rm \
 		   --log-driver none \
