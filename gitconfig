@@ -7,7 +7,6 @@
 [github]
 	# GitHub username for command-line tools.
 	user = joetague-nds
-  oauth-token = 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
 
 [gist]
 	# Open GitHub Gist in browser after submission.
