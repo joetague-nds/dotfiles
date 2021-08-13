@@ -9,6 +9,7 @@ config.tests/
 .tm_properties
 *.xcodeproj/project.xcworkspace/
 *.xcodeproj/xcuserdata/
+.dir-locals.el
 
 # Ignore temporary generated files.
 *.rej
