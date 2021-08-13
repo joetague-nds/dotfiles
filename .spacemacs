@@ -186,7 +186,8 @@ This function should only modify configuration layer settings."
           org-enable-github-support t
           org-enable-jira-support t
           org-enable-org-journal-support t
-          org-enable-valign t)
+          org-enable-valign t
+          org-enable-verb-support t)
 
      ;; https://develop.spacemacs.org/layers/+os/osx/README.html
      osx
