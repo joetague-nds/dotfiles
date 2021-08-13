@@ -819,11 +819,13 @@ before packages are loaded."
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (with-eval-after-load 'org
 
+  (require 'ox-confluence)
+
   (setq org-confirm-babel-evaluate '(not (y-or-n-p "evaluate block? ")))
 
   (setq org-agenda-files '("~/org/work.org"))
-  (setq org-projectile-projects-file "~/org/projectile/projects.org")
-  ;; (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+  (setq org-projectile-file "~/org/projectile/projects.org")
+  (setq org-agenda-files (append org-agenda-files '("~/org/projectile/projects.org")))
 
   (setq org-journal-dir "~/org/journal/")
   (setq org-journal-file-format "%Y%m%d")
@@ -832,9 +834,14 @@ before packages are loaded."
   (setq org-noter-default-notes-file-names '("~/org/learning.org")
         org-noter-notes-search-path '("~/org"))
 
+  (setq jiralib-url "https://nesdigital.atlassian.net:443")
+  (setq org-jira-working-dir "~/org/jira")
+  (setq org-persp-startup-with-agenda "z")
+
   (setq org-deadline-warning-days 5)
   (setq org-clock-into-drawer t)
   (setq org-clock-persist t)
+  (setq spaceline-org-clock-p t)
   (setq org-columns-default-format "%60ITEM(Task) %20TODO %10Effort(Effort){:} %10CLOCKSUM")
   (setq org-global-properties (quote (("Effort_ALL" . "0:15 0:30 0:45 1:00 2:00 3:00 4:00 5:00 6:00 0:00")
                                       ("STYLE_ALL" . "habit"))))
