@@ -56,6 +56,11 @@ This function should only modify configuration layer settings."
      ;; Enable confluence layer useful for exporting to confluence format only
      ;; https://develop.spacemacs.org/layers/+web-services/confluence/README.html
      ;; confluence
+
+     ;; Enable copy-as-format for pasting from emacs into tools like Github, JIRA, Org, markdown (Confluence?)
+     ;; https://develop.spacemacs.org/layers/+misc/copy-as-format/README.html
+     copy-as-format
+
      ;; Tools to work with comma separate values
      ;; Used for data science files
      ;; https://develop.spacemacs.org/layers/+lang/csv/README.html
