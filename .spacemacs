@@ -743,16 +743,21 @@ before packages are loaded."
   (if (version<= "27.1" emacs-version)
       (global-so-long-mode 1))
 
+
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Magit - forge configuration          ;;
+  ;; Auth sources                         ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; (setq epg-gpg-program "/usr/local/bin/gpg")
-  ;; (setf epa-pinentry-mode 'loopback)
   ;; Set the files that are searched for writing tokens
   ;; by default ~/.authinfo will be used
   ;; and write a token in unencrypted format
   (setq auth-sources '("~/.authinfo.gpg"))
   ;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Magit - forge configuration          ;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (with-eval-after-load 'magit
+  ;; Catch any TODOs/FIXMEs in source code as part of magit status buffer
+  (require 'magit-todos)
   ;; Configure number of topics show, open and closed
   ;; use negative number to toggle the view of closed topics
   ;; using `SPC SPC forge-toggle-closed-visibility'
@@ -764,9 +769,11 @@ before packages are loaded."
   ;; used by @ c f  to create a fork
   (setq forge-owned-accounts
         '(("joetague-nds")))
+
   (setq magit-repository-directories
         '(("~/.emacs.d"  . 0)
           ("~/proj/" . 2)))
+  )
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Slack                              ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
