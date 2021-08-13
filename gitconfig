@@ -43,7 +43,7 @@
 	# Exclude everything this file. Used for general exclusions.
 	excludesfile = ~/.gitignore
 	# Set attributes on files. Used for general diff improvements.
-	attributesfile = ~/.gitattributes
+	# attributesfile = ~/.gitattributes
 	editor = emacsclient --no-wait --create-frame
 
 [mergetool]
