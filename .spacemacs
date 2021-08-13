@@ -746,6 +746,7 @@ before packages are loaded."
   ;; Magit - forge configuration          ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; (setq epg-gpg-program "/usr/local/bin/gpg")
+  ;; (setf epa-pinentry-mode 'loopback)
   ;; Set the files that are searched for writing tokens
   ;; by default ~/.authinfo will be used
   ;; and write a token in unencrypted format
