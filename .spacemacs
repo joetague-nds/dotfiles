@@ -53,6 +53,9 @@ This function should only modify configuration layer settings."
      ;;          clojure-enable-clj-refactor t
      ;;          cider-repl-buffer-size-limit 100)
 
+     ;; Enable confluence layer useful for exporting to confluence format only
+     ;; https://develop.spacemacs.org/layers/+web-services/confluence/README.html
+     ;; confluence
      ;; Tools to work with comma separate values
      ;; Used for data science files
      ;; https://develop.spacemacs.org/layers/+lang/csv/README.html
