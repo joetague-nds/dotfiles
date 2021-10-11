@@ -192,6 +192,9 @@ This function should only modify configuration layer settings."
      ;; https://develop.spacemacs.org/layers/+os/osx/README.html
      osx
 
+     ;; https://develop.spacemacs.org/layers/+lang/plantuml/README.html
+     (plantuml :variables plantuml-jar-path "/usr/local/Cellar/plantuml/1.2021.10/libexec/plantuml.jar")
+
      ;; https://develop.spacemacs.org/layers/+readers/pdf/README.html
      pdf
 
@@ -283,8 +286,7 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
                                       dash
-                                      impostman
-                                      magit-todos
+                                      excorporate
                                       org-noter
                                       org-pdftools
                                       org-super-agenda
@@ -755,9 +757,6 @@ before packages are loaded."
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Magit - forge configuration          ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  (with-eval-after-load 'magit
-  ;; Catch any TODOs/FIXMEs in source code as part of magit status buffer
-  (require 'magit-todos)
   ;; Configure number of topics show, open and closed
   ;; use negative number to toggle the view of closed topics
   ;; using `SPC SPC forge-toggle-closed-visibility'
@@ -773,7 +772,6 @@ before packages are loaded."
   (setq magit-repository-directories
         '(("~/.emacs.d"  . 0)
           ("~/proj/" . 2)))
-  )
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Slack                              ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -823,6 +821,8 @@ before packages are loaded."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
+  ;; ;; update the diary every time the org agenda is refreshed
+  ;; (add-hook 'org-agenda-cleanup-fancy-diary-hook 'ab/agenda-update-diary )
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; Setup org                                      ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -953,6 +953,25 @@ SCHEDULED: %<%Y-%m-%d %H:%M>
      (verb . t))
    )
   )
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; Setup excorporate for O365 schedule            ;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; (setq-default
+  ;;  ;; configure email address and office 365 exchange server adddress for exchange web services
+  ;;  excorporate-configuration
+  ;;  (quote
+  ;;   ("joseph.tague@nes.scot.nhs.uk" . "https://outlook.office365.com/EWS/Exchange.asmx"))
+  ;;  ;; integrate emacs diary entries into org agenda
+  ;;  org-agenda-include-diary t
+  ;;  )
+  ;; ;; activate excorporate and request user/password to start connection
+  ;; ;; (excorporate)
+  ;; ;; enable the diary integration (i.e. write exchange calendar to emacs diary file -> ~/.emacs.d/diary must exist)
+  ;; ;; (excorporate-diary-enable)
+  ;; (defun ab/agenda-update-diary ()
+  ;;   "call excorporate to update the diary for today"
+  ;;   (exco-diary-diary-advice (calendar-current-date) (calendar-current-date) #'message "diary updated")
+  ;;   )
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;; AWS CloudFormation/YAML setup                               ;;
   ;; Adds config for Cloudformation YAML Linting using Flycheck  ;;
