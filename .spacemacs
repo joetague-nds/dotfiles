@@ -217,7 +217,11 @@ This function should only modify configuration layer settings."
      ;; restclient
 
      ;; https://develop.spacemacs.org/layers/+frameworks/react/README.html
-     react
+     ;; react
+
+     ;; https://develop.spacemacs.org/layers/+lang/scala/README.html
+     ;; (scala :variables
+     ;;        scala-backend 'lsp-metals)
 
      ;; https://develop.spacemacs.org/layers/+tools/shell/README.html
      (shell :variables
